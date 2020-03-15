@@ -28,6 +28,16 @@ func New(plat string) Platform {
 
 		return p
 	}
-
+	if plat == "jianshu" {
+		p := &Jianshu{
+			info: platInfo{
+				host:       "https://juejin.im",
+				loginURL:   "https://juejin.im/auth/type/email",
+				publishURL: "https://post-storage-api-ms.juejin.im/v1/draftStorage",
+			},
+			extraInfo: JianshuPlatInfo{},
+		}
+		return p
+	}
 	return nil
 }
