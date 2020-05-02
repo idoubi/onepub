@@ -16,8 +16,7 @@ limitations under the License.
 package cmd
 
 import (
-	"fmt"
-
+	"github.com/idoubi/onepub/platform"
 	"github.com/spf13/cobra"
 )
 
@@ -28,7 +27,13 @@ var pubCmd = &cobra.Command{
 	Short:   "publish article to some platform.",
 	Long:    ``,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(args)
+		// todo 从 md 文件中获取
+		article := platform.Article{
+			Title:   "title",
+			Content: "content",
+		}
+
+		platform.New("cnblog").Publish(article)
 	},
 }
 

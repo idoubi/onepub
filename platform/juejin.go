@@ -38,6 +38,32 @@ func (j *Juejin) Login() error {
 	return nil
 }
 
+func (j *Juejin) Publish(article Article) error {
+	cli := goz.NewClient()
+	uri := j.info.loginURL
+	headers := getCommonHeaders()
+
+	data := map[string]interface{}{
+		"email":    "",
+		"password": "",
+	}
+
+	resp, err := cli.Post(uri, goz.Options{
+		Headers: headers,
+		JSON:    data,
+	})
+	if err != nil {
+		return err
+	}
+
+	body, err := resp.GetBody()
+	if err != nil {
+		return err
+	}
+	fmt.Println(body)
+	return nil
+}
+
 // getCommonHeaders 生成通用请求头
 func getCommonHeaders() map[string]interface{} {
 	return map[string]interface{}{
