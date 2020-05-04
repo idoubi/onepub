@@ -1,0 +1,8 @@
+platform:
+  cnblog:
+    cookie:
+    blog-id: # 博客园博客 id
+  juejin:
+    cookie:
+    category: 5562b428e4b00c57d9b94b9d # 分类id
+    tags: 5597acede4b08a686ce6b36c # 标签 id

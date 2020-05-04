@@ -16,27 +16,63 @@ limitations under the License.
 package cmd
 
 import (
+	"fmt"
 	"github.com/idoubi/onepub/platform"
+	"github.com/idoubi/onepub/util"
 	"github.com/spf13/cobra"
 )
 
 // pubCmd represents the pub command
 var pubCmd = &cobra.Command{
-	Use:     "publish",
+	Use:     "publish [filename]",
 	Aliases: []string{"pub", "p"},
 	Short:   "publish article to some platform.",
 	Long:    ``,
+	Args:    cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		// todo 从 md 文件中获取
-		article := platform.Article{
-			Title:   "title",
-			Content: "content",
+		// 解析 md 文件
+		mdFilePath := args[0]
+		article, err := util.NewArticleByMdFile(mdFilePath)
+		if err != nil {
+			fmt.Println(err)
+			return
 		}
 
-		platform.New("cnblog").Publish(article)
+		// 获取推送平台，默认所有平台
+		var publishPlatform []string
+		p, err := cmd.Flags().GetString("platform")
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		if p != "" && !util.InSlice(p, platform.AllPlatform()) {
+			fmt.Println("invalid platform " + p)
+			return
+		}
+
+		if p != "" {
+			publishPlatform = append(publishPlatform, p)
+		} else {
+			publishPlatform = platform.AllPlatform()
+		}
+
+		// 推送...
+		for _, k := range publishPlatform {
+			fmt.Println("发布到 " + k + " 平台...")
+
+			err := platform.New(k).Publish(article)
+
+			if err != nil {
+				fmt.Println("发布 " + k + " 平台失败，原因: " + err.Error())
+			} else {
+				fmt.Println("发布 " + k + " 平台成功")
+			}
+		}
 	},
 }
 
 func init() {
+	pubCmd.Flags().StringP("platform", "p", "", "default all platform")
 	rootCmd.AddCommand(pubCmd)
 }
