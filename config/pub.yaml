@@ -1,8 +1,24 @@
 platform:
   cnblog:
-    cookie:
-    blog-id: # 博客园博客 id
+    cookie: _ga=GA1.2.1531955291.1588949474; __gads=ID=6ef78ecd3e5cc961:T=1588949473:S=ALNI_MZiO6pIQhmafre0U1M5_rGHh8d0-Q; .Cnblogs.AspNetCore.Cookies=CfDJ8B9DwO68dQFBg9xIizKsC6Qw0rmHragg1tf-Tvo5NYC1omzbM03_k-EirnBXAXRrL3A7gHKaIRiSU3HyiWJU9LO6MYiOXzMUaEBvAL9Ugo_W-b24kIsCeTjWfmTZjAd_dsJh5MeOlnLeWgr88Mz-u9-erZTknFoU0L3x7UF1fgCog6HPL4ZPXEPXd5No7LbZy652JdnSpzKRBSbNXDvE3laTLozpcvJDWM2QX_gziSsJF7xl4NKeuHKZXi2YmFm6Xe5pMNf2IPt5Wfa3bwIdMfMRZir88rQSTegD-yj37luCYtXql4mc6GFryZUZUXuDE5mIa8AbKhucqI_k86Y73l-MbjYKaZ8UCsus-2Gxs0o_KYvJMCK24ROmGacRvv6v1aCJ1GXBLccDX-0ebkCLr3rZ0fY0U0E_AJrvZjSmCaay3SjBgml0rukBIOrQHPmE4C4JH8r17Oc4yzvu6xmqbboQTqlhi-wP1lj8BYB1YnIzZQ4FQqchKc0pTjNenkUq-esbNBjb6ndDofGviVAJNUTOyhHawLbGtjYtrOKGYLbw; .CNBlogsCookie=3CBB6C13CDE0026962A41AC20F88C279FB178E3CCB27ECBEDB14B32F2F0482ED26BCA987476949CE916C5898DD4469B6F4215302D3031D3909B8B77C5F3015D52305920A055AD0CCEEA044D07FE26C75E6EA0279; _gid=GA1.2.1184309705.1589293233; _gat=1; _gat_gtag_UA_48445196_1=1
+    blog-id: 601044 # 博客园博客 id
   juejin:
-    cookie:
+    cookie: ab={}; gr_user_id=75094315-e730-40d6-a795-f6ef6e7bf3c4; gr_session_id_89669d96c88aefbc=fe0b7167-6e75-4330-9bca-5ab56741502a; Hm_lvt_93bbd335a208870aa1f296bcd6842e5e=1589977029; _ga=GA1.2.81489772.1589977029; _gid=GA1.2.167494975.1589977029; gr_session_id_89669d96c88aefbc_fe0b7167-6e75-4330-9bca-5ab56741502a=true; auth=eyJ0b2tlbiI6ImV5SmhZMk5sYzNOZmRHOXJaVzRpT2lKWGR6RTBNSFZLYmxaaVNGUlhhRWx1SWl3aWNtVm1jbVZ6YUY5MGIydGxiaUk2SWxablYybGlTWEJwU0RKMVp6bExla2NpTENKMGIydGxibDkwZVhCbElqb2liV0ZqSWl3aVpYaHdhWEpsWDJsdUlqb3lOVGt5TURBd2ZRPT0iLCJjbGllbnRJZCI6MTU4OTk3NzA0NTcxMCwidXNlcklkIjoiNWFmMTZiN2VmMjY1ZGEwYjlhNjllYWYzIn0=; auth.sig=I5Kr-EkoZIq1Z7jMaKCt1c93DOY; gr_cs1_fe0b7167-6e75-4330-9bca-5ab56741502a=objectId%3A5af16b7ef265da0b9a69eaf3; Hm_lpvt_93bbd335a208870aa1f296bcd6842e5e=1589977055; _gat=1; QINGCLOUDELB=908730662bd97c21a55d59265be1718d9eb2c663a78c233d245e9356cc89386b|XsUgJ|XsUgD
     category: 5562b428e4b00c57d9b94b9d # 分类id
     tags: 5597acede4b08a686ce6b36c # 标签 id
+  csdn:
+    cookie: uuid_tt_dd=10_20045842220-1588951117579-563751; dc_session_id=10_1588951117579.785157; __gads=ID=aa1a95e1e3c848f0:T=1588951202:S=ALNI_MZIA2npmd-Y2U_To-S6Y7ngp9EIrQ; dc_sid=625344d1c42aa86c882dddee1d9e30f2; c_first_page=https%3A//www.csdn.net/; SESSION=9dbced18-f490-4806-8dd6-0e25a2248a3c; UserName=qq_33835035; UserInfo=65cb2e18f5bb4abd8c00ceb375e2a3a6; UserToken=65cb2e18f5bb4abd8c00ceb375e2a3a6; UserNick=qq_33835035; AU=868; UN=qq_33835035; BT=1589344119709; p_uid=U000000; Hm_lvt_6bcd52f51e9b3dce32bec4a3997715ac=1588951215,1588951237,1589344112,1589344121; Hm_up_6bcd52f51e9b3dce32bec4a3997715ac=%7B%22islogin%22%3A%7B%22value%22%3A%221%22%2C%22scope%22%3A1%7D%2C%22isonline%22%3A%7B%22value%22%3A%221%22%2C%22scope%22%3A1%7D%2C%22isvip%22%3A%7B%22value%22%3A%220%22%2C%22scope%22%3A1%7D%7D; Hm_ct_6bcd52f51e9b3dce32bec4a3997715ac=6525*1*10_20045842220-1588951117579-563751!5744*1*qq_33835035; c_first_ref=graph.qq.com; announcement=%257B%2522isLogin%2522%253Atrue%252C%2522announcementUrl%2522%253A%2522https%253A%252F%252Fblog.csdn.net%252Fblogdevteam%252Farticle%252Fdetails%252F105203745%2522%252C%2522announcementCount%2522%253A0%252C%2522announcementExpire%2522%253A3600000%257D; c_ref=https%3A//blog.csdn.net/qq_33835035; Hm_lpvt_6bcd52f51e9b3dce32bec4a3997715ac=1589368263; dc_tos=qa9oel
+    categories: redis,mongodb,sql,数据库 # 分类
+    tags: 测试 # 分栏
+  jianshu:
+    cookie: _ga=GA1.2.1956485944.1588689301; __yadk_uid=VX09HpYFx4aNtWG8Y0QBer8CMtb1DRcR; __gads=ID=603574cf191ee150:T=1588689301:S=ALNI_MZsUriavNo-_TYVXjdW405po3o0cA; read_mode=day; default_font=font2; locale=zh-CN; Hm_lvt_0c0e9d9b1e7d617b3e6842e85b9fb068=1588689302,1589543088,1589543558; _gid=GA1.2.1824104100.1589543558; remember_user_token=W1sxNTg3MjQzN10sIiQyYSQxMSRxNU1Vd293aXk1bTVyaU5GUktQNlFPIiwiMTU4OTU0MzgyNy43OTkzMDk3Il0%3D--cc66aa83b4aafafea0875e5e7aff973b563bec1a; web_login_version=MTU4OTU0MzgyNw%3D%3D--33191cccccecea7c63351dcc08b87105f6586d53; _m7e_session_core=25952cc4ab128fcedd50b47e0c09d77a; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%22171e542ef1f88-0fad05b9c3a05a-30677c00-1296000-171e542ef20bc9%22%2C%22first_id%22%3A%22%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%7D%2C%22%24device_id%22%3A%22171e542ef1f88-0fad05b9c3a05a-30677c00-1296000-171e542ef20bc9%22%7D; Hm_lpvt_0c0e9d9b1e7d617b3e6842e85b9fb068=1589544616
+    type: note # diary:日记 note:随笔
+  oschina:
+    cookie: __gads=ID=1f49ad949add7182:T=1588951172:S=ALNI_MYz9hJkqrglZxD5-3Oj3MiamZRoAA; _user_behavior_=60444d6c-2a01-4fc9-ad8e-6985d10141d8; oscid=ZOaDZMk7FNpnYvo7aRgo2ZbESXisr5SagAdXpwkEeTVC9%2Bwxa%2FLggzEIW%2B95fdX02H3c5hBA73BMiy74jP9LGnNKp7BphTXQ5OMoFJu8g959rnH9Qz41flPeIXFuYwkwmsZl2tJpkpt0UU8wppGBXpxbib71HxYv; Hm_lvt_a411c4d1664dd70048ee98afe7b28f0b=1588951172,1589902526,1589902539,1589964714; Hm_lpvt_a411c4d1664dd70048ee98afe7b28f0b=1589964861
+    user_code: f8EG58W2W2oXkCQtJWPssMLBlj26G9Qlu5XD33s5
+    user_id: 4535934
+    as_top: 0 # 是否置顶
+    catalog: 7012018 # 文章分类 7012018：工作日志  7012019：日常记录 7012020：转贴的文章
+    classification: 428612 # 系统分类
+    deny_comment: 0 #是否允许评论
+    privacy: 0 # 是否仅自己可见

@@ -2,7 +2,6 @@ package platform
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"github.com/idoubi/goz"
 	"github.com/idoubi/onepub/util"
@@ -59,6 +58,15 @@ func (j *Juejin) Login() error {
 	return nil
 }
 
+func (j *Juejin) IsLogin() error {
+	_, err := j.getOpt()
+	if err != nil {
+		return fmt.Errorf("juejin login status err: %w", err)
+	}
+
+	return nil
+}
+
 func (j *Juejin) Publish(article util.Article) error {
 	opt, err := j.getOpt()
 	if err != nil {
@@ -70,13 +78,7 @@ func (j *Juejin) Publish(article util.Article) error {
 		return err
 	}
 
-	//err = j.updateStorage(articleId,article,opt)
-	//if err != nil{
-	//	return err
-	//}
-
-	err = j.postArticle(articleId, opt)
-	return err
+	return j.postArticle(articleId, opt)
 }
 
 func (j *Juejin) headers() map[string]interface{} {
@@ -103,7 +105,7 @@ func (j *Juejin) getOpt() (opt jOpt, err error) {
 
 	err = json.Unmarshal(body, &opt)
 	if err != nil {
-		err = errors.New("juejin: get auth error")
+		err = fmt.Errorf("juejin: get auth error:%s", body)
 		return
 	}
 

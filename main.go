@@ -18,5 +18,5 @@ package main
 import "github.com/idoubi/onepub/cmd"
 
 func main() {
-  cmd.Execute()
+	cmd.Execute()
 }

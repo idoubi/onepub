@@ -19,12 +19,29 @@ var platformInfo map[string]Platform = map[string]Platform{
 			publishURL: "https://i-beta.cnblogs.com/api/posts",
 		},
 	},
+	"jianshu": &JianShu{
+		info: platInfo{
+			host:       "",
+			loginURL:   "",
+			publishURL: "",
+		},
+	},
+	"oschina": &OsChina{
+		info: platInfo{
+			host:       "",
+			loginURL:   "",
+			publishURL: "",
+		},
+	},
 }
 
 // Platform 发布文章的平台
 type Platform interface {
 	// 模拟登陆
 	Login() error
+	// 检验登录态
+	IsLogin() error
+	// 发布
 	Publish(article util.Article) error
 }
 
