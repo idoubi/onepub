@@ -23,21 +23,12 @@ import (
 )
 
 // pubCmd represents the pub command
-var pubCmd = &cobra.Command{
-	Use:     "publish [filename]",
-	Aliases: []string{"pub", "p"},
-	Short:   "publish article to some platform.",
+var checkLoginCmd = &cobra.Command{
+	Use:     "checklogin",
+	Aliases: []string{"cl"},
+	Short:   "check platform login status. default check all platform",
 	Long:    ``,
-	Args:    cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		// 解析 md 文件
-		mdFilePath := args[0]
-		article, err := util.NewArticleByMdFile(mdFilePath)
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-
 		// 获取推送平台，默认所有平台
 		var publishPlatform []string
 		p, err := cmd.Flags().GetString("platform")
@@ -59,20 +50,20 @@ var pubCmd = &cobra.Command{
 
 		// 推送...
 		for _, k := range publishPlatform {
-			fmt.Println("发布到 " + k + " 平台...")
+			fmt.Println("检验 " + k + " 平台登录态...")
 
-			err := platform.New(k).Publish(article)
+			err := platform.New(k).IsLogin()
 
 			if err != nil {
-				fmt.Println("发布 " + k + " 平台失败，原因: " + err.Error())
+				fmt.Println("认证失败，原因: " + err.Error())
 			} else {
-				fmt.Println("发布 " + k + " 平台成功")
+				fmt.Println("认证" + k + " 平台成功")
 			}
 		}
 	},
 }
 
 func init() {
-	pubCmd.Flags().StringP("platform", "p", "", "default all platform")
-	rootCmd.AddCommand(pubCmd)
+	checkLoginCmd.Flags().StringP("platform", "p", "", "default all platform")
+	rootCmd.AddCommand(checkLoginCmd)
 }

@@ -1,9 +1,48 @@
 package platform
 
+import (
+	"github.com/idoubi/onepub/util"
+)
+
+var platformInfo map[string]Platform = map[string]Platform{
+	"juejin": &Juejin{
+		info: platInfo{
+			host:       "https://juejin.im",
+			loginURL:   "https://juejin.im/auth/type/email",
+			publishURL: "https://post-storage-api-ms.juejin.im/v1/draftStorage",
+		},
+	},
+	"cnblog": &CnBlog{
+		info: platInfo{
+			host:       "",
+			loginURL:   "",
+			publishURL: "https://i-beta.cnblogs.com/api/posts",
+		},
+	},
+	"jianshu": &JianShu{
+		info: platInfo{
+			host:       "",
+			loginURL:   "",
+			publishURL: "",
+		},
+	},
+	"oschina": &OsChina{
+		info: platInfo{
+			host:       "",
+			loginURL:   "",
+			publishURL: "",
+		},
+	},
+}
+
 // Platform 发布文章的平台
 type Platform interface {
 	// 模拟登陆
 	Login() error
+	// 检验登录态
+	IsLogin() error
+	// 发布
+	Publish(article util.Article) error
 }
 
 // platInfo 平台信息
@@ -17,17 +56,18 @@ type platInfo struct {
 
 // New 初始化
 func New(plat string) Platform {
-	if plat == "juejin" {
-		p := &Juejin{
-			info: platInfo{
-				host:       "https://juejin.im",
-				loginURL:   "https://juejin.im/auth/type/email",
-				publishURL: "https://post-storage-api-ms.juejin.im/v1/draftStorage",
-			},
-		}
-
-		return p
+	if platform, ok := platformInfo[plat]; ok {
+		return platform
 	}
 
 	return nil
+}
+
+// 所有的平台名
+func AllPlatform() []string {
+	keys := make([]string, 0, len(platformInfo))
+	for k := range platformInfo {
+		keys = append(keys, k)
+	}
+	return keys
 }
