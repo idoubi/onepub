@@ -58,9 +58,10 @@ func (blog *CnBlog) Publish(article util.Article) error {
 	resp, err := cli.Post(uri, goz.Options{
 		Headers: blog.headers(),
 		JSON: map[string]interface{}{
-			"title":    article.Title,
-			"postBody": article.HtmlContent,
-			"postType": 1,
+			"title":       article.Title,
+			"postBody":    article.HtmlContent,
+			"postType":    viper.GetInt("platform.cnblog.postType"),
+			"isPublished": true,
 		},
 	})
 
